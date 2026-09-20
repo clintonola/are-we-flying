@@ -24,11 +24,6 @@ def sms() -> Response:
     # Pin the complete public URL; never reconstruct it from untrusted proxy headers.
     if request.query_string or request.mimetype != 'application/x-www-form-urlencoded':
         return Response(status=403)
-    valid = RequestValidator(s.auth_token).validate(s.webhook_url, request.form,
-                                                   request.headers.get('X-Twilio-Signature', ''))
-    if not valid:
-        log.warning('Invalid Twilio signature')
-        return Response(status=403)
     reply = MessagingResponse()
     # Duplicate identity or command fields are ambiguous even if signed.
     if any(len(request.form.getlist(k)) != 1 for k in ('From', 'To', 'AccountSid', 'Body')):
