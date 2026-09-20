@@ -1,0 +1,33 @@
+{
+  "icaoId": "KRYY",
+  "receiptTime": "2026-09-19T22:52:06.884Z",
+  "obsTime": 1789858200,
+  "reportTime": "2026-09-19T23:00:00.000Z",
+  "temp": 22.8,
+  "dewp": 20.6,
+  "wdir": 230,
+  "wspd": 7,
+  "visib": "10+",
+  "altim": 1017,
+  "slp": 1015.9,
+  "qcField": 12,
+  "wxString": "VCTS -RA",
+  "metarType": "METAR",
+  "rawOb": "METAR KRYY 192250Z 23007KT 10SM VCTS -RA FEW055 SCT110 23/21 A3003 RMK AO2 WSHFT 2140 LTG DSNT SE-W RAB11 SLP159 T02280206 PNO $",
+  "lat": 34.0146,
+  "lon": -84.5964,
+  "elev": 306,
+  "name": "Marietta/Cobb Cnty, GA, US",
+  "cover": "SCT",
+  "clouds": [
+    {
+      "cover": "FEW",
+      "base": 5500
+    },
+    {
+      "cover": "SCT",
+      "base": 11000
+    }
+  ],
+  "fltCat": "VFR"
+}
