@@ -48,7 +48,7 @@ def evaluate(w: WeatherObservation, settings: Settings, now: datetime | None = N
     e.worst_wind_kt = max(w.wind_speed_kt, w.wind_gust_kt or 0)
     e.wind_pass = e.worst_wind_kt <= m.max_wind_kt
     try:
-        e.runway_components = calculate_runways(w.wind_direction, w.wind_speed_kt, w.is_variable_wind, settings)
+        e.runway_components = calculate_runways(w.wind_direction,e.worst_wind_kt, w.is_variable_wind, settings)
     except ValueError as exc:
         e.unknown_reasons.append(str(exc))
         log.info('Evaluation UNKNOWN: %s', e.unknown_reasons)
